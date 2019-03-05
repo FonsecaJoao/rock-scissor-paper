@@ -3,6 +3,8 @@ let playerSelection = '';
 let highscorePlayer = 0;
 let highscoreComputer = 0;
 const buttons = document.querySelectorAll('input');
+const p = document.querySelectorAll('p');
+
 
 buttons.forEach(button => button.addEventListener('click', game));
 
@@ -26,29 +28,41 @@ function getRandomIntInclusive(min, max) {
 
 function play(playerSelection, computerSelection) {
     if (playerSelection === 'ROCK' && computerSelection === 'ROCK') {
-        console.log('It\'s a draw! Rock draws with Rock! Try again. :(');
+        p[1].innerHTML = 'It\'s a draw! Rock draws with Rock! Try again. :(';
     } else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
-        console.log('Congratulations! Paper beats Rock! You win!!!');
+        p[1].innerHTML = 'Congratulations! Paper beats Rock! You win!!!';
         highscorePlayer += 1;
+        p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
+            highscoreComputer + ' :Computer';
     } else if (playerSelection === 'SCISSOR' && computerSelection === 'ROCK') {
-        console.log('Too bad! You Lose! Rock beats Scissor! :\'(');
+        p[1].innerHTML = 'Too bad! You Lose! Rock beats Scissor! :\'(';
         highscoreComputer += 1;
+        p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
+            highscoreComputer + ' :Computer';
     } else if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
-        console.log('Too bad! You Lose! Paper beats Rock! :\'(');
+        p[1].innerHTML = 'Too bad! You Lose! Paper beats Rock! :\'(';
         highscoreComputer += 1;
+        p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
+            highscoreComputer + ' :Computer';
     } else if (playerSelection === 'PAPER' && computerSelection === 'PAPER') {
-        console.log('It\'s a draw! Paper draws with Paper! Try again. :(');
+        p[1].innerHTML = 'It\'s a draw! Paper draws with Paper! Try again. :(';
     } else if (playerSelection === 'SCISSOR' && computerSelection === 'PAPER') {
-        console.log('Congratulations! Scissor beats Paper! You win!!!');
+        p[1].innerHTML = 'Congratulations! Scissor beats Paper! You win!!!';
         highscorePlayer += 1;
+        p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
+            highscoreComputer + ' :Computer';
     } else if (playerSelection === 'ROCK' && computerSelection === 'SCISSOR') {
-        console.log('Congratulations! Rock beats Scissor! You win!!!');
+        p[1].innerHTML = 'Congratulations! Rock beats Scissor! You win!!!';
         highscorePlayer += 1;
+        p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
+            highscoreComputer + ' :Computer';
     } else if (playerSelection === 'PAPER' && computerSelection === 'SCISSOR') {
-        console.log('Too bad! You Lose! Scissor beats Paper! :\'(');
+        p[1].innerHTML = 'Too bad! You Lose! Scissor beats Paper! :\'(';
         highscoreComputer += 1;
+        p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
+            highscoreComputer + ' :Computer';
     } else if (playerSelection === 'SCISSOR' && computerSelection === 'SCISSOR') {
-        console.log('It\'s a draw! Scissor draws with Scissor! Try again. :(');
+        p[1].innerHTML = 'It\'s a draw! Scissor draws with Scissor! Try again. :(';
     }
 }
 
