@@ -14,11 +14,11 @@ main {
     left: 40%;
 }
 
-button {
-    height: 75px;
-    width: 150px;
-}
-
 p {
     text-align: center;
+}
+
+input[type='button'] {
+    height: 75px;
+    width: 150px;
 }
