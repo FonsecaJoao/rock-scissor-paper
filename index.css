@@ -1,7 +1,12 @@
+@font-face {
+    font-family: SFAtarianSystem;
+    src: url('SFAtarianSystem.ttf');
+}
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: 'SFAtarianSystem';
 }
 body {
     background: url(img/rawpixel-743124-unsplash.jpg);
@@ -10,20 +15,24 @@ body {
 
 main {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 40%;
 }
 
 h1 {
     text-align: center;
+    font-size: 3em;
 }
 
 p {
     text-align: center;
+    font-size: 2em;
 }
 
 input[type='button'] {
     height: 75px;
     width: 150px;
+    font-family: 'SFAtarianSystem';
+    font-size: 1.75em;
 }
 
