@@ -1,0 +1,24 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+body {
+    background: url(img/rawpixel-743124-unsplash.jpg);
+    background-size: cover;
+}
+
+main {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+button {
+    height: 75px;
+    width: 150px;
+}
+
+p {
+    text-align: center;
+}
