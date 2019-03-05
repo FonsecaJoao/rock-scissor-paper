@@ -2,8 +2,9 @@ let computerSelection = '';
 let playerSelection = '';
 let highscorePlayer = 0;
 let highscoreComputer = 0;
+const buttons = document.querySelectorAll('input');
 
-document.getElementById('demo2').addEventListener('click', game);
+buttons.forEach(button => button.addEventListener('click', game));
 
 function computerPlay() {
     let result = getRandomIntInclusive(1,9);
@@ -55,12 +56,13 @@ function play(playerSelection, computerSelection) {
 function game() {
     console.log(highscorePlayer);
     console.log(highscoreComputer);
-    if (highscorePlayer <= 2 && highscoreComputer <= 2) {
+    if (highscorePlayer <= 4 && highscoreComputer <= 4) {
         computerPlay();
-        playerSelection = prompt('Type Rock, Paper or Scissor and let\'s see if you win');
+        playerSelection = this.value;
         playerSelection = playerSelection.toUpperCase();
         play(playerSelection,computerSelection); 
     } else {
         alert('The game finished! Result: Player: ' + highscorePlayer + ' vs ' + highscoreComputer + ' :Computer');
+        location.reload(true);
     }
-} 
+}
