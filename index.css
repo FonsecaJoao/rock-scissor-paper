@@ -10,8 +10,12 @@ body {
 
 main {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 40%;
+}
+
+h1 {
+    text-align: center;
 }
 
 p {
@@ -22,3 +26,4 @@ input[type='button'] {
     height: 75px;
     width: 150px;
 }
+
