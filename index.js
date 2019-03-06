@@ -5,7 +5,6 @@ let highscoreComputer = 0;
 const buttons = document.querySelectorAll('input');
 const p = document.querySelectorAll('p');
 
-
 buttons.forEach(button => button.addEventListener('click', game));
 
 function computerPlay() {
@@ -67,22 +66,24 @@ function play(playerSelection, computerSelection) {
         p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
             highscoreComputer + ' :Computer';
         finishGame();
-    } else if (playerSelection === 'SCISSOR' && computerSelection === 'SCISSOR') {
-        p[1].innerHTML = 'It\'s a draw! Scissor draws with Scissor! Try again. :(';
-    }   
+    } else if (playerSelection === 'SCISSOR' && computerSelection
+        === 'SCISSOR') {
+        p[1].innerHTML =
+            'It\'s a draw! Scissor draws with Scissor! Try again. :(';
+    }
 }
 
 function finishGame() {
     if (highscorePlayer === 5 || highscoreComputer === 5) {
-        alert('The game finished! Result: Player: ' + highscorePlayer + ' vs ' + highscoreComputer + ' :Computer');
+        alert('The game finished! Result: Player: ' + highscorePlayer + ' vs '
+            + highscoreComputer + ' :Computer');
         location.reload(true);
     }
 }
 
-
-function game() { 
+function game() {
         computerPlay();
         playerSelection = this.value;
         playerSelection = playerSelection.toUpperCase();
-        play(playerSelection,computerSelection); 
+        play(playerSelection,computerSelection);
 }
