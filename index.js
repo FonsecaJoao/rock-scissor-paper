@@ -34,16 +34,19 @@ function play(playerSelection, computerSelection) {
         highscorePlayer += 1;
         p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
             highscoreComputer + ' :Computer';
+        finishGame();
     } else if (playerSelection === 'SCISSOR' && computerSelection === 'ROCK') {
         p[1].innerHTML = 'Too bad! You Lose! Rock beats Scissor! :\'(';
         highscoreComputer += 1;
         p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
             highscoreComputer + ' :Computer';
+        finishGame();
     } else if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
         p[1].innerHTML = 'Too bad! You Lose! Paper beats Rock! :\'(';
         highscoreComputer += 1;
         p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
             highscoreComputer + ' :Computer';
+        finishGame();
     } else if (playerSelection === 'PAPER' && computerSelection === 'PAPER') {
         p[1].innerHTML = 'It\'s a draw! Paper draws with Paper! Try again. :(';
     } else if (playerSelection === 'SCISSOR' && computerSelection === 'PAPER') {
@@ -51,32 +54,35 @@ function play(playerSelection, computerSelection) {
         highscorePlayer += 1;
         p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
             highscoreComputer + ' :Computer';
+        finishGame();
     } else if (playerSelection === 'ROCK' && computerSelection === 'SCISSOR') {
         p[1].innerHTML = 'Congratulations! Rock beats Scissor! You win!!!';
         highscorePlayer += 1;
         p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
             highscoreComputer + ' :Computer';
+        finishGame();
     } else if (playerSelection === 'PAPER' && computerSelection === 'SCISSOR') {
         p[1].innerHTML = 'Too bad! You Lose! Scissor beats Paper! :\'(';
         highscoreComputer += 1;
         p[3].innerHTML = 'Player: ' + highscorePlayer + ' - ' +
             highscoreComputer + ' :Computer';
+        finishGame();
     } else if (playerSelection === 'SCISSOR' && computerSelection === 'SCISSOR') {
         p[1].innerHTML = 'It\'s a draw! Scissor draws with Scissor! Try again. :(';
+    }   
+}
+
+function finishGame() {
+    if (highscorePlayer === 5 || highscoreComputer === 5) {
+        alert('The game finished! Result: Player: ' + highscorePlayer + ' vs ' + highscoreComputer + ' :Computer');
+        location.reload(true);
     }
 }
 
 
-function game() {
-    console.log(highscorePlayer);
-    console.log(highscoreComputer);
-    if (highscorePlayer <= 4 && highscoreComputer <= 4) {
+function game() { 
         computerPlay();
         playerSelection = this.value;
         playerSelection = playerSelection.toUpperCase();
         play(playerSelection,computerSelection); 
-    } else {
-        alert('The game finished! Result: Player: ' + highscorePlayer + ' vs ' + highscoreComputer + ' :Computer');
-        location.reload(true);
-    }
 }
